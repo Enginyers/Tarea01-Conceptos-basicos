@@ -1,0 +1,23 @@
+body, html {
+  
+    background-color: #f3f4f5;
+  }
+
+
+  h1 {
+    color: black;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: center ;
+}
+
+  p {
+    color: #757575;
+    font-family: 'Georgia', sans-serif;
+    font-size: 18px;
+}
+
+img { 
+  display: block; 
+  margin: auto; 
+}
