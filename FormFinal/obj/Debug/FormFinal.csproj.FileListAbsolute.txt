@@ -1,0 +1,12 @@
+C:\Users\usuario\Desktop\FormFinal\bin\Debug\FormFinal.exe.config
+C:\Users\usuario\Desktop\FormFinal\bin\Debug\FormFinal.exe
+C:\Users\usuario\Desktop\FormFinal\bin\Debug\FormFinal.pdb
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.csprojAssemblyReference.cache
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.Form1.resources
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.FormAgregar.resources
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.Properties.Resources.resources
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.exe
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.pdb
+C:\Users\usuario\Desktop\FormFinal\obj\Debug\FormFinal.FormEditar.resources

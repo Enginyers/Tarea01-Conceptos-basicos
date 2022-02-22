@@ -1,0 +1,80 @@
+private string ConnectionString = "Data Source=LAPTOP-79F2RK9S\\SQLEXPRESS; Initial Catalog=MiPrueba; Integrated Security=True;";
+        //User=sa; Password=123
+
+dataGridView1.DataSource= oconn.Get();
+
+metodo para cargar los datos al abrir el formulario primero clase datos
+
+public List<Datos> Get()
+        {
+            List<Datos> datos = new List<Datos>();
+            string query = " EXECUTE sp_consultar_productos ";
+
+            using (SqlConnection conn=new SqlConnection (ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query,conn);
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Datos odatos = new Datos();
+                        odatos.Id = reader.GetInt32(0);
+                        odatos.num_producto = reader.GetInt32(1);
+                        odatos.pedido = reader.GetInt32(2);
+                        odatos.Nombre = reader.GetString(3);
+                        datos.Add(odatos);
+                    }
+                    reader.Close();
+                    conn.Close();
+
+                    return datos;
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception("Error en la bd " + ex.Message);
+                }
+
+            }
+        } 
+
+ //obtener el id de la celda seleccionada
+        private int? GetId()
+        {
+            try
+            {
+                return int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+//editar
+private int? Id;
+        public FormEditar(int? Id=null)
+        {
+            InitializeComponent();
+            this.Id = Id;
+        }
+
+        private void FormEditar_Load(object sender, EventArgs e)
+        {
+            Conexion oconn = new Conexion();
+
+            Datos odatos = oconn.Get((int)Id);
+            textNum.Text = odatos.num_producto.ToString();
+            textPedido.Text = odatos.pedido.ToString();
+            textNombre.Text = odatos.Nombre;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Conexion oconn = new Conexion();
+            oconn.Editar(int.Parse(textNum.Text), int.Parse(textPedido.Text), textNombre.Text,(int)Id);
+            this.Close();
+        }

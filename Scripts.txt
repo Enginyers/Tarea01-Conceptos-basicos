@@ -1,0 +1,34 @@
+create database MiPrueba
+go
+use 
+MiPrueba
+go
+Create table productos(
+Id int primary key identity(1,1),
+num_producto int,
+Pedido int,
+nombre varchar(30)
+
+)
+go
+create proc sp_consulta_productos_num
+@Parametro int
+as
+select * from productos
+where num_producto = @Parametro
+go
+create proc sp_consultar_productos
+as
+select * from productos
+go
+create proc sp_consultar_productos_pedido
+@Parametro int
+as
+select * from productos
+where Pedido = @Parametro
+go
+create proc sp_consultar_productos_id
+@Parametro int
+as
+select * from productos
+where Id= @Parametro
