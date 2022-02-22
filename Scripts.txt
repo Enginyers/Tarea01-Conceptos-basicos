@@ -32,3 +32,10 @@ create proc sp_consultar_productos_id
 as
 select * from productos
 where Id= @Parametro
+
+--------------------
+
+ EXECUTE sp_consultar_productos
+insert into productos (num_producto,pedido,nombre) values(@num,@pedido,@nombre)
+" EXECUTE sp_consultar_productos_id '" + Id + "'";
+ Update productos set num_producto=@num,pedido=@pedido,nombre=@nombre where id=@id
